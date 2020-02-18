@@ -101,8 +101,7 @@ G = nx.from_numpy_matrix(np_adj)
 centrality = nx.edge_betweenness(G)
 sorted_x = sorted(centrality.items(), key=operator.itemgetter(1)) # sort
 sorted_x.reverse() # reverse
-#input = random.sample(list(range(1000)),int(np.ceil(3327 * 1/100))) # with replacement -> np.random.choice
-selection_input = int(np.ceil(118 * 0.5/100))
+selection_input = int(np.ceil(118 * 1/100))
 
 for i in range(selection_input):
     np_adj[sorted_x[i][0][0], sorted_x[i][0][1]] = 0
@@ -155,7 +154,7 @@ Dg = np.diag(np.diag(Lg))
 Ag = Dg - Lg
 Ag = sp.csr_matrix(Ag)
 
-alpha = 0.2
+alpha = 0.1
 power_Dg = np.float_power(np.diag(Dg), -alpha)
 power_Dg = np.diag(power_Dg)
 power_Dg = sp.csr_matrix(power_Dg)
