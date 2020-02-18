@@ -1,0 +1,16 @@
+# Dev related
+.idea/
+*.egg-info
+.pytest_caches/
+dist
+build
+
+# Docs
+docs/site/
+
+# Logs
+logs/
+
+# Executables
+*.sh~
+*.pyc
