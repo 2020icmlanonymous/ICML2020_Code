@@ -195,7 +195,7 @@ Dg = np.diag(np.diag(Lg))
 Ag = Dg - Lg
 Ag = sp.csr_matrix(Ag)
 
-alpha = 0.09
+alpha = 0.2
 power_Dg = np.float_power(np.diag(Dg), -alpha)
 power_Dg = np.diag(power_Dg)
 power_Dg = sp.csr_matrix(power_Dg)
