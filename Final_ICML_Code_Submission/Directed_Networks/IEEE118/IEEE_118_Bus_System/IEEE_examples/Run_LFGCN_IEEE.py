@@ -102,7 +102,7 @@ centrality = nx.edge_betweenness(G)
 sorted_x = sorted(centrality.items(), key=operator.itemgetter(1)) # sort
 sorted_x.reverse() # reverse
 #input = random.sample(list(range(1000)),int(np.ceil(3327 * 1/100))) # with replacement -> np.random.choice
-selection_input = int(np.ceil(118 * 1/100))
+selection_input = int(np.ceil(118 * 0.5/100))
 
 for i in range(selection_input):
     np_adj[sorted_x[i][0][0], sorted_x[i][0][1]] = 0
