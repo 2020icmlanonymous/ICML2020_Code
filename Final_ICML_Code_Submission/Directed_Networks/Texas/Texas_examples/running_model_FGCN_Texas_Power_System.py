@@ -93,7 +93,7 @@ es_patience = 300
 recur_num = 3
 
 # Fractional-G-SSL part #
-gamma = 0.1
+gamma = 0.05 #0.1->0.05
 degrees = np.array(adj.sum(1)).flatten()
 degrees[np.isinf(degrees)] = 0.
 D = sp.diags(degrees, 0)
