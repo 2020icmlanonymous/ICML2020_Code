@@ -110,7 +110,7 @@ es_patience = 300
 recur_num = 3
 
 # First Fractional-G-SSL part
-gamma = 0.05 # 0.1-> 0.05
+gamma = 0.05 
 degrees = np.array(adj.sum(1)).flatten()
 degrees[np.isinf(degrees)] = 0.
 D = sp.diags(degrees, 0)
@@ -137,7 +137,7 @@ Dg = np.diag(np.diag(Lg))
 Ag = Dg - Lg
 Ag = sp.csr_matrix(Ag)
 
-alpha = 0.1
+alpha = 0.05
 power_Dg = np.float_power(np.diag(Dg), -alpha)
 power_Dg = np.diag(power_Dg)
 power_Dg = sp.csr_matrix(power_Dg)
@@ -151,7 +151,7 @@ fltr = fltr * power_Dg_right
 
 
 # Second Fractional-G-SSL part
-gamma = 0.1
+gamma = 0.05
 degrees = np.array(original_adj.sum(1)).flatten()
 degrees[np.isinf(degrees)] = 0.
 D = sp.diags(degrees, 0)
@@ -178,7 +178,7 @@ Dg = np.diag(np.diag(Lg))
 Ag = Dg - Lg
 Ag = sp.csr_matrix(Ag)
 
-alpha = 0.1
+alpha = 0.05
 power_Dg = np.float_power(np.diag(Dg), -alpha)
 power_Dg = np.diag(power_Dg)
 power_Dg = sp.csr_matrix(power_Dg)
