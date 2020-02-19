@@ -87,7 +87,7 @@ centrality = nx.edge_betweenness(G)
 sorted_x = sorted(centrality.items(), key=operator.itemgetter(1)) # sort
 sorted_x.reverse() # reverse
 #input = random.sample(list(range(1000)),int(np.ceil(3327 * 1/100))) # with replacement -> np.random.choice
-selection_input = int(np.ceil(2000 * 5/100))
+selection_input = int(np.ceil(2000 * 1/100))
 
 for i in range(selection_input):
     np_adj[sorted_x[i][0][0], sorted_x[i][0][1]] = 0
@@ -110,7 +110,7 @@ es_patience = 300
 recur_num = 3
 
 # First Fractional-G-SSL part
-gamma = 0.1
+gamma = 0.05 # 0.1-> 0.05
 degrees = np.array(adj.sum(1)).flatten()
 degrees[np.isinf(degrees)] = 0.
 D = sp.diags(degrees, 0)
